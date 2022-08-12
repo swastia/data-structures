@@ -20,7 +20,7 @@
 // Assuming numbers won't repeat in the input array
 
 
-package com.learn;
+package com.learn.leetcode;
 
 import java.util.Arrays;
 
