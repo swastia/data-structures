@@ -15,7 +15,7 @@ import java.util.List;
  * **/
 
 public class GraphUsingAdjacencyList {
-    private int numberOfNodes;
+    //private int numberOfNodes;
 
     public HashMap<Integer, List<Integer>> getAdjacentList() {
         return adjacentList;
@@ -24,7 +24,7 @@ public class GraphUsingAdjacencyList {
     private final HashMap<Integer, List<Integer>> adjacentList;
 
     public GraphUsingAdjacencyList(){
-        numberOfNodes = 0;
+        //numberOfNodes = 0;
         this.adjacentList = new HashMap<>();
     }
 
@@ -38,14 +38,10 @@ public class GraphUsingAdjacencyList {
         if(adjacentList.containsKey(node1) && adjacentList.containsKey(node2)){
             List<Integer> node1List = adjacentList.get(node1);
             List<Integer> node2List = adjacentList.get(node2);
-            if(node1List.contains(node2)){
-                return;
-            } else{
+            if(!node1List.contains(node2)){
                 node1List.add(node2);
             }
-            if(node2List.contains(node1)){
-                return;
-            } else{
+            if(!node2List.contains(node1)){
                 node2List.add(node1);
             }
         } else{
