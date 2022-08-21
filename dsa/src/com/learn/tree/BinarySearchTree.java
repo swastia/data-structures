@@ -2,6 +2,8 @@ package com.learn.tree;
 
 import com.sun.source.tree.Tree;
 
+import java.util.*;
+
 public class BinarySearchTree {
     private TreeNode root;
 
@@ -69,6 +71,10 @@ public class BinarySearchTree {
         System.out.println("Printing tree from root:  " + bst.root.data);
         bst.printLeafNodes(bst.root);
 
+        bst.breadthFirstTraversal();
+
+        System.out.println("DST In order list: " + bst.depthFirstTraversal(bst.root, new ArrayList<>()));
+
     }
 
     private void printLeafNodes(TreeNode node){
@@ -91,4 +97,43 @@ public class BinarySearchTree {
 
     }
 
+    private void breadthFirstTraversal(){
+        TreeNode currentNode = this.root;
+        List<Integer> allNodes = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(currentNode);
+
+        while(queue.size() > 0){
+            currentNode = queue.poll();
+            allNodes.add(currentNode.data);
+            if(currentNode.left != null){
+                queue.add(currentNode.left);
+            }
+            if(currentNode.right != null){
+                queue.add(currentNode.right);
+            }
+        }
+        System.out.println(allNodes);
+
+    }
+
+
+    // write DFS to traverse through the tree
+    // DFS can be done in 3 ways - Inorder, Preorder and postorder
+    // DFS is usually implemented using recursion
+
+    private List<Integer> depthFirstTraversal(TreeNode node, List<Integer> allNodes){
+        System.out.println("current node: " + node.data);
+        System.out.println("current list items: " + allNodes);
+
+        if(node.left != null){
+            depthFirstTraversal(node.left, allNodes);
+        }
+        allNodes.add(node.data);
+
+        if(node.right != null){
+            depthFirstTraversal(node.right, allNodes);
+        }
+        return allNodes;
+    }
 }

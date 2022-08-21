@@ -1,4 +1,4 @@
-package com.learn.algorithms;
+package com.learn.algorithms.sorting;
 
 public class ReverseString {
     // reverse using iterations
