@@ -1,16 +1,20 @@
-package com.learn.tree;
+package com.learn.algorithms.searching;
 
 /* Tree to be created
             9
        4         20
      1   6    15    170
 * */
-import java.util.*;
 
-public class BinarySearchTree {
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
+public class BinarySearchTreeBfsDfs {
     private TreeNode root;
 
-    BinarySearchTree(){
+    BinarySearchTreeBfsDfs(){
         this.root = null;
     }
 
@@ -61,7 +65,7 @@ public class BinarySearchTree {
     // Add a lookup method to find an element
 
     public static void main(String[] args) {
-        BinarySearchTree bst = new BinarySearchTree();
+        BinarySearchTreeBfsDfs bst = new BinarySearchTreeBfsDfs();
         bst.insert(9);
         bst.insert(4);
         bst.insert(6);
