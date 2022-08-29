@@ -51,7 +51,6 @@ public class BinarySearchTree {
                         currentNode.left = newNode;
                         break;
                     }
-
                 }
             }
 

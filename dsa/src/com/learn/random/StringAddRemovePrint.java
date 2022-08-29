@@ -12,7 +12,7 @@ public class StringAddRemovePrint {
         * */
         var list = new ArrayList<String>();
         list.add("Monday");
-        list.add(String::new);
+        //list.add(String::new);
         list.add("Tuesday");
         list.remove(0);
         System.out.println(list.get(0));
