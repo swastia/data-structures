@@ -25,5 +25,8 @@ public class CheckOutput {
         //int min2147483647
         //long max2147483648
         //long min-2147483649
+
+        // find index of small letters using ascii value using
+        System.out.println('c' - 'a');
     }
 }
