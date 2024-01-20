@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 public class MergeSort {
 
-    // Merge sort uses divide and conquer - recursion O(nlogn) space - O(n)
+    // Merge sort uses divide and conquer - recursion O(nlog n) space - O(n)
     // divide the input in smallest possible size
     public static int[] mergeSort(int[] input) {
         // base case - divide till each list has 1 element

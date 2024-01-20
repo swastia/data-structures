@@ -59,6 +59,26 @@ public class BinarySearchTree {
 
     // Add a lookup method to find an element
 
+    public boolean lookup(int value){
+        boolean isNodeExist = false;
+        if(this.root == null){
+            isNodeExist = false;
+        } else{
+            TreeNode currentNode = this.root;
+            while(currentNode != null){
+                if(currentNode.data == value){
+                    isNodeExist = true;
+                    break;
+                } else if(currentNode.data > value){
+                    currentNode = currentNode.left;
+                } else if(currentNode.data < value){
+                    currentNode = currentNode.right;
+                }
+            }
+        }
+        return isNodeExist;
+    }
+
     public static void main(String[] args) {
         BinarySearchTree bst = new BinarySearchTree();
         bst.insert(9);
@@ -69,11 +89,21 @@ public class BinarySearchTree {
         bst.insert(15);
         bst.insert(1);
 
-
         System.out.println("Printing tree from root:  " + bst.root.data);
+
+        System.out.println("Is 9 present in tree : " + bst.lookup(9));
+        System.out.println("Is 170 present in tree : " + bst.lookup(170));
+        System.out.println("Is 1 present in tree : " + bst.lookup(1));
+        System.out.println("Is 15 present in tree : " + bst.lookup(15));
+        System.out.println("Is 10 present in tree : " + bst.lookup(10));
+        System.out.println("Is 9900 present in tree : " + bst.lookup(9900));
+
+
         bst.printLeafNodes(bst.root);
 
         bst.breadthFirstTraversal();
+
+
 
         System.out.println("DST In order list: " + bst.depthFirstTraversal(bst.root, new ArrayList<>()));
 
