@@ -5,8 +5,6 @@ import java.util.Map;
 
 public class LongestSubstringWithoutRepetition {
 
-    // TODO : fix +1 chars coming
-
     public static void main(String[] args) {
 
         System.out.println(getLongestStrLength("abcbdaac"));
