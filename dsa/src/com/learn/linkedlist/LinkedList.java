@@ -129,7 +129,7 @@ public class LinkedList {
         LLNode currentNode = this.head;
 
         while(counter != length){
-            sb.append(currentNode.nodeValue + " ");
+            sb.append(currentNode.nodeValue + " --> ");
             currentNode = currentNode.nextNode;
             counter++;
         }
